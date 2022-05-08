@@ -13,14 +13,16 @@ import { useState, useEffect  } from "react";
 
 const useInitialState = () => {
 
-  /*if(typeof window !== "undefined"){
-    let value = localStorage.getItem("state");
-    value = JSON.parse(value);
-    initialState = value;
-  }*/
 
 
   const [state, setState] = useState(initialState);
+
+  useEffect(()=>{
+    if (JSON.parse(localStorage.getItem("state")).length > 0){
+      const InLocalStorage = JSON.parse(localStorage.getItem("state"));
+      setState({...state, ...InLocalStorage});
+    }
+  },[state]);
 
   const addToCart = (payload) => {
     setState({
@@ -69,10 +71,6 @@ const useInitialState = () => {
     });
   };
 
-    /*if(typeof window !== "undefined"){
-      localStorage.setItem("state", JSON.stringify(state));
-    };*/
-   
 
   return {
     state,
