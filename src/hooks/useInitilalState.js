@@ -13,8 +13,6 @@ import { useState, useEffect  } from "react";
 
 const useInitialState = () => {
 
-
-
   const [state, setState] = useState(initialState);
 
 
@@ -32,6 +30,7 @@ const useInitialState = () => {
       productIDs: state.productIDs.filter((el) => el !== state.cart[indexValue].id),
       cart: state.cart.filter((product, index) => index !== indexValue),
     });
+    
   };
 
   const addCheckout = (checkout) => {
@@ -49,6 +48,7 @@ const useInitialState = () => {
       ...state,
       selectedOrder: { selected: true, value: order },
     });
+    
   };
 
   const selectProduct = (product) => {
@@ -56,6 +56,7 @@ const useInitialState = () => {
       ...state,
       productSelected: product,
     });
+   
   };
 
   const handleModal = () => {
@@ -63,6 +64,7 @@ const useInitialState = () => {
       ...state,
       toggleModal: !state.toggleModal,
     });
+   
   };
 
 
