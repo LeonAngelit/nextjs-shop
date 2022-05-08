@@ -1,0 +1,54 @@
+@import "vars";
+
+.total-order{
+  width: 90%;
+  background-color: $--text-input-field;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.order-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.order-info .date{
+  font-family: 'Quicksand', sans-serif;
+  font-size: $--sm;
+  font-weight: bold;
+  color: black;
+  
+}
+
+.order-info p{
+  font-family: 'Quicksand', sans-serif;
+  font-size: $--sm;
+  font-weight: 300;
+  color: black;
+  
+}
+
+.total-amount{
+  display: flex;
+  align-items: center;
+}
+
+.total-amount p + *{
+  cursor: pointer;
+}
+
+
+.total-amount p{
+  font-family: 'Quicksand', sans-serif;
+  font-size: $--md;
+  font-weight: bold;
+  color: $--dark;
+  margin-right: 8px;
+}
+

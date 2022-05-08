@@ -1,0 +1,119 @@
+@import "vars"; 
+      
+      .email-sent{
+            width: 90vw;
+            max-width: 320px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .email__main-title{
+            margin-top: 4rem;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2.4rem;
+        }
+        .email__main-title img{
+            width: 45%;
+            margin-bottom: 48px;
+        }
+        .email__main-title h1{
+            font-family: 'Quicksand', sans-serif;
+            font-size: $--lg;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: black;
+        }
+        .email__main-title p{
+            font-family: 'Quicksand', sans-serif;
+            font-size: $--md;
+            color: $--dark;
+            font-weight: 300;
+        }
+
+        .email-sent-container{
+            width: 140px;
+            height: 140px;
+            background-color: $--text-input-field;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .email-sent-img{
+            width: 60%;
+        }
+
+
+        .primary-button{
+            border: none;
+            border-radius: 8px;
+            background-color: $--text-input-field;
+            height: 44px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: $--md;
+            font-weight: 300;
+            color: $--dark;
+            padding: 8px;
+            margin-bottom: 16px;
+            background-color: $--hospital-green;
+            color: white;
+            font-size: $--lg;
+            font-weight: 500;
+            height: 56px;
+            margin-bottom: 24px;
+            margin-top: 24px;
+        }
+
+        .primary-button:hover{
+            cursor: pointer;
+        }
+
+      .login-button{
+            border: none;
+            border-radius: 8px;
+            background-color: $--text-input-field;
+            height: 36px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: $--sm;
+            font-weight: bold;
+            color: black;
+            padding: 8px;
+            margin-bottom: 32px;
+        }
+        .login-button{
+            background-color: $--hospital-green;
+            color: white;
+            font-size: $--lg;
+            font-weight: 500;
+            height: 56px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .resend{
+            display: flex;
+        }
+
+        .resend *{
+           
+            font-family: 'Quicksand', sans-serif;
+            font-size: $--sm;
+            font-weight: 500;
+        }
+
+        .resend a{
+            text-decoration: none;
+            color: $--hospital-green;
+            margin-left: 4px;
+        }
+
+        @media (min-width: 600px){
+            .logoContainer{
+            display: none;
+        }
+        }

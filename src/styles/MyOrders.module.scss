@@ -1,0 +1,79 @@
+@import "vars";
+
+.orders-container{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 80vh;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 10vh;
+}
+
+.orders-container h2{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: $--lg;
+    width: 90%;
+    margin-top: 40px;
+    margin-bottom: 24px;
+}
+
+.orders-list{
+    width: 100%;;
+}
+
+
+.orders-container .total-order{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.orders-container .order-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.orders-container .order-info .date{
+    font-family: 'Quicksand', sans-serif;
+    font-size: $--sm;
+    font-weight: bold;
+    color: black;
+    
+}
+
+.orders-container .order-info p{
+    font-family: 'Quicksand', sans-serif;
+    font-size: $--sm;
+    font-weight: 300;
+    color: black;
+    
+}
+
+.orders-container .total-amount{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.orders-container .total-amount p{
+    font-family: 'Quicksand', sans-serif;
+    font-size: $--md;
+    font-weight: bold;
+    color: $--dark;
+}
+
+
+@media (max-width: 640px){
+    
+    .orders-container h2{
+        display: none;
+    }
+} 

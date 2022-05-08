@@ -1,0 +1,101 @@
+@import "vars";
+
+.edit-account{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 16px;
+    margin-top: 10vh;
+}
+.edit__main-title{
+    margin-top: 48px;
+    width: 100%;
+    text-align: left;
+}
+
+.edit__main-title h2{
+    font-family: 'Quicksand', sans-serif;
+    font-size: $--lg;
+    font-weight: bold;
+    color: black;
+}
+
+.edit__form-container p{
+    font-size: $--sm;
+}
+
+
+.edit__form-container{
+    margin-top: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.edit__form-container > div{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.label{
+    font-family: 'Quicksand', sans-serif;
+    font-size: $--sm;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: black;
+}
+
+.secondary-button{
+    border: none;
+    border-radius: 8px;
+    background-color: $--text-input-field;
+    height: 44px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: $--md;
+    font-weight: 300;
+    color: $--dark;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.secondary-button{
+    color: $--hospital-green;
+    background-color: white;
+    border: 1px solid $--hospital-green;
+    width: 90%;
+    margin: 0;
+    font-weight: bold;
+    height: 56px;
+    margin: 0 auto 8px;
+}
+
+.secondary-button:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 600px){
+    .edit__main-title img{
+    display: none;
+}
+
+    .edit__form-container{
+       height: 50%;
+    }
+
+.edit__main-title h2{
+    margin-top: 4rem;
+}
+.edit__main-title{
+    margin-top: 8rem;
+}
+
+.edit-account{
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+} 

@@ -1,0 +1,45 @@
+@import "vars";
+.cart-item, .cart-item-amount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item{
+    margin-bottom: 24px;
+}
+
+.cart-item-info{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cart-item-info img{
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.cart-item-amount img:hover{
+    cursor: pointer;
+}
+
+.cart-item-info p{
+    font-family: 'Quicksand', sans-serif;
+    font-size: $--sm;
+    font-weight: 300;
+    color: $--dark;
+    margin-left: 20px;
+}
+
+.cart-item-amount p{
+    font-family: 'Quicksand', sans-serif;
+    font-size: $--md;
+    font-weight: bold;
+    color: $--dark;
+    margin-left: 20px;
+    padding: 12px;
+}

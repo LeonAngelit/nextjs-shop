@@ -1,0 +1,38 @@
+@import "vars";
+
+.checkout-container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 10vh;
+    height: 90vh;
+    align-items: center;
+}
+
+.checkout-container h2{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: $--lg;
+    width: 90%;
+    margin-top: 40px
+}
+
+
+.items{
+    text-decoration: none;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+@media (max-width: 640px){
+    
+    .checkout-container h2{
+        display: none;
+    }
+} 
