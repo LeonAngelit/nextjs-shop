@@ -13,11 +13,11 @@ import { useState, useEffect  } from "react";
 
 const useInitialState = () => {
 
-  if(typeof window !== "undefined"){
+  /*if(typeof window !== "undefined"){
     let value = localStorage.getItem("state");
     value = JSON.parse(value);
     initialState = value;
-  }
+  }*/
 
 
   const [state, setState] = useState(initialState);
@@ -69,9 +69,9 @@ const useInitialState = () => {
     });
   };
 
-    if(typeof window !== "undefined"){
+    /*if(typeof window !== "undefined"){
       localStorage.setItem("state", JSON.stringify(state));
-    };
+    };*/
    
 
   return {
