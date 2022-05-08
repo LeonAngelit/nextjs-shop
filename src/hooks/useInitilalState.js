@@ -1,4 +1,6 @@
-import { useState, useEffect  } from "react";
+import { useState} from "react";
+import {setCookies, getCookie, checkCookies} from 'cookies-next';
+
 
 
   let initialState = {
@@ -12,6 +14,10 @@ import { useState, useEffect  } from "react";
   
 
 const useInitialState = () => {
+
+  if(checkCookies('state')){
+    initialState = JSON.parse(getCookie('state'));
+  }
 
   const [state, setState] = useState(initialState);
 
@@ -66,6 +72,8 @@ const useInitialState = () => {
     });
    
   };
+
+  setCookies('state', JSON.stringify(state), {maxAge: 36000});
 
 
   return {
