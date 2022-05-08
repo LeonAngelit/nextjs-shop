@@ -17,12 +17,6 @@ const useInitialState = () => {
 
   const [state, setState] = useState(initialState);
 
-  useEffect(()=>{
-    if (JSON.parse(localStorage.getItem("state")).length > 0){
-      const InLocalStorage = JSON.parse(localStorage.getItem("state"));
-      setState({...state, ...InLocalStorage});
-    }
-  },[state]);
 
   const addToCart = (payload) => {
     setState({
