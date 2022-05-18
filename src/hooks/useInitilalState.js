@@ -1,6 +1,5 @@
 import { useState} from "react";
-import {setCookies, getCookie, checkCookies} from 'cookies-next';
-
+import { useEffect } from "react";
 
 
   let initialState = {
@@ -14,12 +13,20 @@ import {setCookies, getCookie, checkCookies} from 'cookies-next';
   
 
 const useInitialState = () => {
+  function getState(){
+    if(window.localStorage.getItem('state') !== null){
+      initialState = JSON.parse(window.localStorage.getItem('state'));
+    }
 
-  if(checkCookies('state')){
-    initialState = JSON.parse(getCookie('state'));
-  }
+    return initialState;
+  };
+
 
   const [state, setState] = useState(initialState);
+
+  useEffect(()=>{
+    setState(getState())
+  },[])
 
 
   const addToCart = (payload) => {
@@ -29,6 +36,7 @@ const useInitialState = () => {
       productIDs: [...state.productIDs, payload.id],
       modified: true,
     });
+    window.localStorage.setItem('state', JSON.stringify(state))
   };
   const removeFromCart = (indexValue) => {
     setState({
@@ -36,7 +44,7 @@ const useInitialState = () => {
       productIDs: state.productIDs.filter((el) => el !== state.cart[indexValue].id),
       cart: state.cart.filter((product, index) => index !== indexValue),
     });
-    
+    window.localStorage.setItem('state', JSON.stringify(state))
   };
 
   const addCheckout = (checkout) => {
@@ -46,6 +54,7 @@ const useInitialState = () => {
       cart: [],
       productIDs: [],
     });
+    window.localStorage.setItem('state', JSON.stringify(state))
   };
 
   const setOrder = (order) => {
@@ -54,7 +63,7 @@ const useInitialState = () => {
       ...state,
       selectedOrder: { selected: true, value: order },
     });
-    
+    window.localStorage.setItem('state', JSON.stringify(state))
   };
 
   const selectProduct = (product) => {
@@ -62,7 +71,7 @@ const useInitialState = () => {
       ...state,
       productSelected: product,
     });
-   
+    window.localStorage.setItem('state', JSON.stringify(state))
   };
 
   const handleModal = () => {
@@ -70,10 +79,9 @@ const useInitialState = () => {
       ...state,
       toggleModal: !state.toggleModal,
     });
-   
+    window.localStorage.setItem('state', JSON.stringify(state))
   };
 
-  setCookies('state', JSON.stringify(state), {maxAge: 36000});
 
 
   return {

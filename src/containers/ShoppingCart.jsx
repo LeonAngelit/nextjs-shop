@@ -4,6 +4,7 @@ import Back from '@assets/icons/flechita.svg'
 import CartItem from '@components/CartItem';
 import AppContext from '@context/AppContext';
 import Image from 'next/image';
+import Router from 'next/router';
 
 
 const ShoppingCart = () => {
@@ -40,7 +41,7 @@ const ShoppingCart = () => {
       if(state.cart.length > 0 ){
         addCheckout({amount: sumTotal(), articles: state.cart, date: new Date().toDateString()});
         state.selectedOrder.selected = false;
-        location.href="/my-order";
+        Router.push("/my-order");
         } else null}}> Checkout</button>
   </div>
 </div>
