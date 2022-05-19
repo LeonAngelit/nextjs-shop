@@ -12,9 +12,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 
+
 const Header = () =>{
   const [toggle,setToggle] = useState(false);
   const [toggleMobile,setToggleMobile] = useState(false);
+  const [toggleModal,setToggleModal] = useState(false);
   const {state} = useContext(AppContext);
   const {handleModal} = useContext(AppContext);
   const handleToggle = ()=>{
@@ -23,9 +25,11 @@ const Header = () =>{
   const handleToggleMobile = ()=>{
     return setToggleMobile(!toggleMobile);
   };
-  const handleCart = () =>{
-    handleModal();
+  const handleToggleModal = ()=>{
+    return setToggleModal(!toggleModal);
   };
+  
+
     return(
 <header className={styles["navbar-container"]}>
   <div className={styles["logo-menu"]} onClick={() => handleToggleMobile()} onKeyDown={() => handleToggleMobile()} role="button" tabIndex={0}>
@@ -46,15 +50,15 @@ const Header = () =>{
   </nav>
   <div className={styles["account-state"]}>
     <button onClick={() => handleToggle()} onKeyDown={()=> handleToggle()} role="menu">exampleUser</button>
-    <div className={styles.imageCart}> <Image src={Cart} alt="Cart" width={40} height={40} onClick={() => handleCart()} /></div>
+    <div className={styles.imageCart}> <Image src={Cart} alt="Cart" width={40} height={40} onClick={() => handleToggleModal()} /></div>
    {state.cart.length > 0 ?  <div className={styles["shopping-cart-notification"]}>{state.cart.length}</div> : null}
   </div>
   <div className={styles["modals-container"]}>
   {state.productSelected && <ProductDetail product = {state.productSelected} />}
-  {toggle && <DesktopMenu />}
-  {state.toggleModal && <ShoppingCart />}
+  {toggle && <DesktopMenu handle={handleToggle}/>}
+  {toggleModal && <ShoppingCart handle={handleToggleModal}/>}
   </div>
-  {toggleMobile && <MobileMenu />}
+  {toggleMobile && <MobileMenu handle={handleToggleMobile} />}
 </header>
     );
 

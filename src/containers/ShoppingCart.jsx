@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Router from 'next/router';
 
 
-const ShoppingCart = () => {
+const ShoppingCart = ({handle}) => {
   const {state} = useContext(AppContext);
   const {handleModal} = useContext(AppContext);
   const {addCheckout} = useContext(AppContext);
@@ -38,10 +38,12 @@ const ShoppingCart = () => {
   </div>
   <button className={styles["primary-button"]} onClick={() =>
     { 
+      handle();
       if(state.cart.length > 0 ){
         addCheckout({amount: sumTotal(), articles: state.cart, date: new Date().toDateString()});
         state.selectedOrder.selected = false;
         Router.push("/my-order");
+        handle;
         } else null}}> Checkout</button>
   </div>
 </div>

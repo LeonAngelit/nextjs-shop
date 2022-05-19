@@ -6,11 +6,6 @@ import AppContext from "@context/AppContext";
 import Head from "next/head";
 const MyOrder = () => {
   const { state } = useContext(AppContext);
-  const { handleModal } = useContext(AppContext);
-  const handleCart = () => {
-    handleModal();
-  };
-  state.toggleModal == true ? handleCart() : null;
 
   return (
     <>

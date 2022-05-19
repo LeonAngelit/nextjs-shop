@@ -5,7 +5,6 @@ import { useEffect } from "react";
   let initialState = {
     cart: [],
     productIDs: [],
-    toggleModal: false,
     checkouts: [],
     selectedOrder: { selected: false, value: 0 },
     productSelected: false,
@@ -71,15 +70,8 @@ const useInitialState = () => {
       ...state,
       productSelected: product,
     });
-    window.localStorage.setItem('state', JSON.stringify(state))
-  };
-
-  const handleModal = () => {
-    setState({
-      ...state,
-      toggleModal: !state.toggleModal,
-    });
-    window.localStorage.setItem('state', JSON.stringify(state))
+    window.localStorage.setItem('state', JSON.stringify(state));
+  
   };
 
 
@@ -88,7 +80,6 @@ const useInitialState = () => {
     state,
     addToCart,
     removeFromCart,
-    handleModal,
     addCheckout,
     setOrder,
     selectProduct,
