@@ -16,7 +16,7 @@ const ProductCard = ({product}) => {
   };
     return (
         <div className={styles["home__product-card"]}>
-          <div role={"button"} tabIndex={0}
+          <div  className={styles["home__image-container"]}role={"button"} tabIndex={0}
           onClick={()=> state.productSelected ? state.productSelected==product ? selectProduct(false) : selectProduct(product) : selectProduct(product)} 
           onKeyDown={()=> state.productSelected ? state.productSelected==product ? selectProduct(false) : selectProduct(product) : selectProduct(product)}>
           <img src={product.images[0]} alt={product.title}/>
