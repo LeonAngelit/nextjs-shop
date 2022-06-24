@@ -8,8 +8,11 @@
 
 .item{
     margin-bottom: 20px;
-}
 
+}
+.item:hover{
+    cursor: pointer;
+}
 .item-info{
     width: 50%;
     display: flex;

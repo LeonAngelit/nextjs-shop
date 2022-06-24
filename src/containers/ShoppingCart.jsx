@@ -9,10 +9,10 @@ import Router from 'next/router';
 
 const ShoppingCart = ({handle}) => {
   const {state} = useContext(AppContext);
-  const {handleModal} = useContext(AppContext);
   const {addCheckout} = useContext(AppContext);
+
   const handleCart = () =>{
-    handleModal();
+    handle();
   }
 
   const sumTotal = () =>{

@@ -31,7 +31,7 @@ const ProductDetail = ({product}) => {
       </div>
       {state.productIDs.includes(product.id) ?  <button className={styles.disabled} onClick={()=>HandleClick(product)}><span className={styles.carrito} /> Added to cart</button>  : 
       <button className={styles["primary-button"]} onClick={()=>HandleClick(product)}><span className={styles["carrito"]} /> Add to cart</button> }
-      <div className={styles.close}><Image src={Close} alt="product detail" onClick={()=>selectProduct(false)} /></div>
+      <div className={styles.close}  onClick={()=>selectProduct(false)} ><Image src={Close} alt="product detail"/></div>
     </div>
   </aside>
 

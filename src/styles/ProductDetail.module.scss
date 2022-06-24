@@ -64,14 +64,17 @@
     cursor: pointer;
 }
 
-.detail__product-card .close>img{
+.detail__product-card .close img{
     width: 40%;
     object-fit: cover;
-   
+    filter: contrast(0%);
+    filter: saturate(0%);
+    filter: invert(100%);
 }
 
 .detail__product-card .close{
     cursor: pointer;
+    border: 1px solid rgba(0,0,0,.5)
 }
 
 .detail__product-card > img{
@@ -79,6 +82,7 @@
    object-fit: cover;
    border-radius: 0 0 10% 10%;
    margin-bottom: 8px;
+   color: $--black;
 }
 
 .detail__product-card .description{
