@@ -8,7 +8,7 @@ const CheckoutItem = ({product}) => {
     return ( 
   
   <li className={styles.item}>
-  <div role="button" tabIndex={0} onClick={() => selectProduct(product)} onKeyDown={()=> selectProduct(product)}>
+  <div className={styles["info-container"]} role="button" tabIndex={0} onClick={() => selectProduct(product)} onKeyDown={()=> selectProduct(product)}>
   <div className={styles["item-info"]}>
     <img src={product.images[0]} alt="bici"  />
     <p>{product.title}</p>
