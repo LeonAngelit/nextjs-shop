@@ -1,15 +1,14 @@
-@import "vars";
 .cart-container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: white;
+    background-color: var(--white);
     width: 400px;
     max-width: 400px;
     height: 85vh;
     padding: 8px;
     border-radius: 15px;
-    border: 1px solid $--hospital-green;
+    border: 1px solid var(--hospital-green);
     animation: aparecerMenu 0.5s ease;
     margin-left: 0.1vw;
     z-index: 999;
@@ -31,7 +30,7 @@
     display: inline-block;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    font-size: $--lg;
+    font-size: var(--lg);
     width: 90%;
     text-align: center;
 }
@@ -55,7 +54,7 @@
 }
 .cart-total-order{
     width: 100%;
-    background-color: $--text-input-field;
+    background-color: var(--text-input-field);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,13 +66,13 @@
 
 .cart-total-order p{
     font-family: 'Quicksand', sans-serif;
-    font-size: $--lg;
+    font-size: var(--lg);
     font-weight: bold;
-    color: black;
+    color: var(--dark);
 }
 
 .cart-total-order p:nth-child(1){
-    font-size: $--sm;
+    font-size: var(--sm);
 }
 
 
@@ -90,12 +89,12 @@
 
 .cart-items::-webkit-scrollbar{
     width: 10px;
-    color: $--hospital-green;
+    color: var(--hospital-green);
     opacity: .8;
  }
 
 .cart-items::-webkit-scrollbar-thumb{
-background-color: $--hospital-green;
+background-color: var(--hospital-green);
 border-radius: 20px;
 }
 
@@ -107,6 +106,7 @@ border-radius: 20px;
 
 .cart-item{
     margin-bottom: 24px;
+  
 }
 
 .cart-item-info{
@@ -129,25 +129,25 @@ border-radius: 20px;
 
 .cart-item-info p{
     font-family: 'Quicksand', sans-serif;
-    font-size: $--sm;
+    font-size: var(--sm);
     font-weight: 300;
-    color: $--dark;
+    color: var(--dark);
     margin-left: 20px;
 }
 
 .cart-item-amount p{
     font-family: 'Quicksand', sans-serif;
-    font-size: $--md;
+    font-size: var(--md);
     font-weight: bold;
-    color: $--dark;
+    color: var(--dark);
     margin-left: 20px;
     padding: 12px;
 }
 
 .primary-button{
-    background-color: $--hospital-green;
+    background-color: var(--hospital-green);
     color: white;
-    font-size: $--lg;
+    font-size: var(--lg);
     font-weight: 500;
     height: 56px;
     cursor: pointer;

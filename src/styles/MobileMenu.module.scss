@@ -5,14 +5,14 @@
     flex-direction: column;
     width: 98vw;
     height: 80vh;
-    border: 1px solid $--very-light-pink;
+    border: 1px solid var(--very-light-pink);
     align-items: flex-start;
     justify-content: space-between;
     animation: aparecerMobile 0.5s;
     position: absolute;
     top: 12vh;
     left: 0;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 8px;
 }
 
@@ -39,7 +39,7 @@
     font-size: $--sm;
     margin-bottom: 12px;
     text-decoration: none;
-    color: $--black;
+    color: var(--dark);
 }
 
 .mobile-menu > ul li:hover{
@@ -52,6 +52,7 @@
     font-size: $--md;
     width: 80%;
     margin: 16px auto 0;
+    color: var(--dark);
 }
 
 .section1, .section2{
@@ -81,7 +82,7 @@
     font-size: $--sm;
     margin-bottom: 20px;
     text-decoration: none;
-    color: $--black;
+    color: var(--dark);
 }
 
 .session-info{
@@ -97,12 +98,13 @@
 
 .session-info p{
     font-weight: 300;
+    color: var(--dark);
 
 }
 
 .session-info a{
     text-decoration: none;
-    color: $--hospital-green;
+    color: var(--hospital-green);
     font-weight: 500;
 }
 

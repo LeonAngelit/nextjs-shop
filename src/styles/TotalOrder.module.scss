@@ -2,7 +2,7 @@
 
 .total-order{
   width: 90%;
-  background-color: $--text-input-field;
+  background-color: var(--text-input-field);
   display: flex;
   justify-content: space-between;
   height: 60px;
@@ -22,7 +22,7 @@
   font-family: 'Quicksand', sans-serif;
   font-size: $--sm;
   font-weight: bold;
-  color: black;
+  color: var(--dark);
   
 }
 
@@ -30,7 +30,7 @@
   font-family: 'Quicksand', sans-serif;
   font-size: $--sm;
   font-weight: 300;
-  color: black;
+  color:  var(--dark);
   
 }
 
@@ -48,7 +48,7 @@
   font-family: 'Quicksand', sans-serif;
   font-size: $--md;
   font-weight: bold;
-  color: $--dark;
+  color: var(--dark);
   margin-right: 8px;
 }
 

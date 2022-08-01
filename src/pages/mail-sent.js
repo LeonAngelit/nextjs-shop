@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "@styles/EmailSent.module.scss";
-import Logo from "@assets/logos/logo_yard_sale.svg";
+import LogoYard from "@assets/logos/logo_yard_sale.jsx";
 import Email from "@assets/icons/email.svg";
 import Image from "next/image";
 import Head from "next/head";
@@ -14,7 +14,11 @@ const EmailSent = () => {
       </Head>
       <div className={styles[`email-sent`]}>
         <span className={styles[`email__main-title`]}>
-          <div className={styles.logoContainer}><Image src={Logo} alt="logo yard sale" /></div>
+          <div className={styles.logoContainer}>
+            <figure>
+              <LogoYard />
+            </figure>
+          </div>
           <h1>Email has been sent!</h1>
           <p>Please check your inbox for instructions on how to reset the password</p>
         </span>

@@ -1,9 +1,8 @@
 import React, { useContext} from 'react';
-import AddCart from '@assets/icons/bt_add_to_cart.svg';
-import AddedCart from '@assets/icons/bt_added_to_cart.svg';
+import SvgAdd from '@assets/icons/bt_add_to_cart';
+import SvgAdded from '@assets/icons/bt_added_to_cart.jsx';
 import styles from '@styles/ProductCard.module.scss';
 import AppContext from '@context/AppContext';
-import Image from 'next/image';
 
 const ProductCard = ({product}) => {
   const {state} = useContext(AppContext);
@@ -15,20 +14,20 @@ const ProductCard = ({product}) => {
     state.productIDs.includes(item.id) ? removeFromCart(state.productIDs.indexOf(item.id)) : addToCart(item);
   };
     return (
-        <div className={styles["home__product-card"]}>
+        <div className={styles["home__product-card"]} data-theme={state.theme}>
           <div  className={styles["home__image-container"]}role={"button"} tabIndex={0}
           onClick={()=> state.productSelected ? state.productSelected==product ? selectProduct(false) : selectProduct(product) : selectProduct(product)} 
           onKeyDown={()=> state.productSelected ? state.productSelected==product ? selectProduct(false) : selectProduct(product) : selectProduct(product)}>
           <img src={product.images[0]} alt={product.title}/>
           </div>
       <div className={styles["home__description"]}>
-        <div className={styles["text"]}>
+        <div className={styles["text"]} data-theme={state.theme}>
           <h3>${product.price}</h3>
           <p>{product.title}</p>
         </div>
         <figure>
           <div onClick={()=>HandleClick(product)}  onKeyDown={()=>HandleClick(product)} role={"button"} tabIndex={0}>
-          <Image width={73.06} height={73.06} objectPosition={"static"} src={state.productIDs.includes(product.id) ? AddedCart: AddCart} alt="product" />
+        {state.productIDs.includes(product.id) ? <SvgAdded /> : <SvgAdd />} 
           </div>
         </figure>
       </div>

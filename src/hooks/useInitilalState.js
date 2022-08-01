@@ -1,80 +1,90 @@
-import { useState} from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 
-
-  let initialState = {
-    cart: [],
-    productIDs: [],
-    checkouts: [],
-    selectedOrder: { selected: false, value: 0 },
-    productSelected: false,
-  };
-  
+let initialState = {
+  cart: [],
+  productIDs: [],
+  checkouts: [],
+  selectedOrder: { selected: false, value: 0 },
+  productSelected: false,
+  userLoggedIn: false,
+  checked: false,
+};
 
 const useInitialState = () => {
-  function getState(){
-    if(window.localStorage.getItem('state') !== null){
-      initialState = JSON.parse(window.localStorage.getItem('state'));
+  function getState() {
+    if (window.localStorage.getItem("state") !== null) {
+      initialState = JSON.parse(window.localStorage.getItem("state"));
     }
-
     return initialState;
-  };
+  }
 
+  function updateState(element) {
+    window.localStorage.setItem("state", JSON.stringify(element));
+  }
 
   const [state, setState] = useState(initialState);
 
-  useEffect(()=>{
-    setState(getState())
-  },[])
-
-
   const addToCart = (payload) => {
-    setState({
+    state = {
       ...state,
       cart: [...state.cart, payload],
       productIDs: [...state.productIDs, payload.id],
       modified: true,
-    });
-    window.localStorage.setItem('state', JSON.stringify(state))
+    };
+    updateState(state);
+    setState(state);
   };
+
   const removeFromCart = (indexValue) => {
-    setState({
+    state = {
       ...state,
       productIDs: state.productIDs.filter((el) => el !== state.cart[indexValue].id),
       cart: state.cart.filter((product, index) => index !== indexValue),
-    });
-    window.localStorage.setItem('state', JSON.stringify(state))
+    };
+    updateState(state);
+    setState(state);
   };
 
   const addCheckout = (checkout) => {
-    setState({
+    state = {
       ...state,
       checkouts: [...state.checkouts, checkout],
       cart: [],
       productIDs: [],
-    });
-    window.localStorage.setItem('state', JSON.stringify(state))
+    };
+    updateState(state);
+    setState(state);
   };
 
   const setOrder = (order) => {
-    console.log(order);
-    setState({
+    state = {
       ...state,
       selectedOrder: { selected: true, value: order },
-    });
-    window.localStorage.setItem('state', JSON.stringify(state))
+    };
+    updateState(state);
+    setState(state);
+  };
+
+  const updateChecked = (checked) => {
+    state = {
+      ...state,
+      checked: checked,
+    };
+    setState(state);
+    updateState(state);
   };
 
   const selectProduct = (product) => {
-    setState({
+    state = {
       ...state,
       productSelected: product,
-    });
-    window.localStorage.setItem('state', JSON.stringify(state));
-  
+    };
+    updateState(state);
+    setState(state);
   };
 
-
+  useEffect(() => setState(getState()), []);
 
   return {
     state,
@@ -83,6 +93,7 @@ const useInitialState = () => {
     addCheckout,
     setOrder,
     selectProduct,
+    updateChecked,
   };
 };
 

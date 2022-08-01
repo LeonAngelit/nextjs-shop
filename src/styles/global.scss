@@ -1,8 +1,67 @@
 
+@import "vars";
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 62.5%;
     font-family: 'Quicksand', sans-serif;
+
 }
+
+:root{$--very-light-pink: #c7c7c7;
+$--hospital-green: #ACD9B2;
+$--white: white;
+$--black: black;
+$--dark: #232830;
+$--text-input-field: #F7F7F7;
+$--sm:14px;
+$--md:16px;
+$--lg:18px;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    color: var(--hospital-green);
+    opacity: .8;
+ }
+::-webkit-scrollbar-thumb{
+background-color: var(--hospital-green);
+border-radius: 20px;
+}
+
+
+
+body{
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.addCartImage path{
+    fill: white;
+    
+}
+
+.addCartImage path:nth-child(4){
+    stroke: white;
+}
+
+.addCartImage circle{
+    fill: var(--hospital-green);
+}
+
+.IconCart path{
+    fill: var(--dark)
+}
+
+.IconMenu path{
+    fill: var(--dark)
+}
+
+
+.LogoYard path{
+    fill: var(--hospital-green);
+}
+

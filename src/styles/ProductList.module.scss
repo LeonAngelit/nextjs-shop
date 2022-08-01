@@ -1,42 +1,115 @@
 @import "vars";
 
-.product-list-container{
-    width: 98vw;
-    height: 100vh;
-    margin: 10vh auto 0;
+.product-list-container {
+  width: 98vw;
+  height: 100vh;
+  margin: 10vh auto 0;
 }
 
-.list__cards-container{
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,240px);
-    gap: 16px;
-    justify-content: center;
-    z-index: -2;
+.search__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-bottom: 1rem;
 }
 
-
-.product-list-container figure img{
-   width: 70%;
-   cursor: pointer;
+.search__container label {
+  font-size: $--sm;
+  color: var(--dark);
+  font-weight: 300;
+  margin-right: 1rem;
+  margin-top: 1rem;
 }
 
-.product-list-container h3, .product-list-container p{
-    font-size: $--md;
-    font-family: 'Quicksand', sans-serif;
+.search__container > input {
+  width: 20%;
+  height: auto;
+  font-size: $--md;
+  margin-top: 1rem;
+  border: none;
+  border-bottom: 2px solid var(--hospital-green);
+  outline: none;
+  color: var(--dark);
+  background: none;
+}
+
+.search__container > input::placeholder {
+  color: var(--dark);
+}
+
+.search__container select {
+  width: 20%;
+  height: auto;
+  font-size: $--md;
+  margin-top: 1rem;
+  border: none;
+  border-bottom: 2px solid var(--hospital-green);
+  outline: none;
+  color: var(--dark);
+  background: none;
+}
+
+.search__container select option {
+  color: var(--dark);
+  background: var(--white);
+}
+
+.search__container select {
+  cursor: pointer;
+}
+
+.categories__filter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.list__cards-container {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 240px);
+  gap: 16px;
+  justify-content: center;
+  z-index: -2;
+}
+
+.no-result {
+  width: 98vw;
+  margin: 0 auto;
+  font-size: $--lg;
+  text-align: center;
+}
+
+.product-list-container figure img {
+  width: 70%;
+  cursor: pointer;
+}
+
+.product-list-container h3,
+.product-list-container p {
+  font-size: $--md;
+  font-family: "Quicksand", sans-serif;
+}
+.product-list-container p {
+  font-size: $--sm;
+  color: var(--dark);
+  font-weight: 300;
+}
+
+@media (max-width: 640px) {
+  .search__container {
+   flex-direction: column;
+  }
+  .search__container > input {
+    width: 50%;
+  }
+
+  .search__container select {
+   width: 50%;
+  }
 
 }
-.product-list-container p{
-    font-size: $--sm;
-    color: $--dark;
-    font-weight: 300;
-}
-
-
-@media (max-width: 640px){
-    
-   /* .list__cards-container{
-        grid-template-columns: repeat(auto-fill,120px);
-    }*/
-
-} 

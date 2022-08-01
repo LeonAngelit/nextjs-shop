@@ -20,11 +20,12 @@
     font-family: 'Quicksand', sans-serif;
     font-size: $--lg;
     font-weight: bold;
-    color: black;
+    color: var(--dark);
 }
 
 .edit__form-container p{
     font-size: $--sm;
+    color: var(--dark);
 }
 
 
@@ -57,7 +58,7 @@
     font-family: 'Quicksand', sans-serif;
     font-size: $--md;
     font-weight: 300;
-    color: $--dark;
+    color: var(--dark);
     padding: 8px;
     margin-bottom: 16px;
 }

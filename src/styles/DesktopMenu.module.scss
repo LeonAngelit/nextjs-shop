@@ -4,7 +4,7 @@
     display: block;
     width: 12vw;
     height: 172px;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 8px;
     border: 1px solid $--very-light-pink;
     animation: aparecer 0.5s;
@@ -32,7 +32,7 @@
     font-size: $--sm;
     margin-bottom: 20px;
     text-decoration: none;
-    color: $--black;
+    color: vaR(--black);
 }
 
 .menu > ul li a:hover{
@@ -40,7 +40,7 @@
 }
 
 .sign-out{
-    color: $--hospital-green;
+    color: var(--hospital-green);
     border-top: 1px solid $--very-light-pink;
     padding-top: 24px;
     margin-top: 8px;

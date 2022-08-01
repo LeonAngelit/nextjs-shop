@@ -20,6 +20,7 @@
     width: 90%;
     margin-top: 40px;
     margin-bottom: 24px;
+    color: var(--dark);
 }
 
 .orders-list{
@@ -52,7 +53,7 @@
     font-family: 'Quicksand', sans-serif;
     font-size: $--sm;
     font-weight: 300;
-    color: black;
+    color: var(--dark);
     
 }
 
@@ -67,7 +68,7 @@
     font-family: 'Quicksand', sans-serif;
     font-size: $--md;
     font-weight: bold;
-    color: $--dark;
+    color: var(--dark);
 }
 
 
