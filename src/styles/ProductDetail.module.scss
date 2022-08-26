@@ -23,9 +23,9 @@
     position: relative;
     padding-top: 4px;
     padding-bottom: 8px;
-    border: 1px solid $--hospital-green;
+    border: 1px solid var(--hospital-green);
     border-radius: 8px;
-    background-color: white;
+    background-color: var(--white);
 }
 
 .detail__product-card .close{
@@ -51,7 +51,7 @@
 
 .detail__product-card li{
     list-style-type: none;
-    background-color: $--very-light-pink;
+    background-color: var(--dark);
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -60,7 +60,7 @@
 
 
 .detail__product-card li:hover{
-    color: $--dark;
+    color: var(--dark);
     cursor: pointer;
 }
 
@@ -82,7 +82,7 @@
    object-fit: cover;
    border-radius: 0 0 10% 10%;
    margin-bottom: 8px;
-   color: $--black;
+   color: var(--black);
 }
 
 .detail__product-card .description{
@@ -102,12 +102,13 @@
 }*/
 
 .text h3 {
+    color: var(--dark);
     font-size: $--md;
     font-family: 'Quicksand', sans-serif;
 
 }
 .text p{
-    color: $--dark;
+    color: var(--dark);
     font-weight: 300;
     font-size: $--md;
 }
@@ -120,8 +121,8 @@
 }
 
 .primary-button{
-    background-color: $--hospital-green;
-    color: white;
+    background-color: var(--hospital-green);
+    color: var(--white);
     font-size: $--md;
     font-weight: 500;
     height: 56px;
@@ -134,8 +135,8 @@
 
 .disabled{
     opacity: 0.5;
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     font-size: $--md;
     font-weight: 500;
     height: 56px;
@@ -196,8 +197,8 @@
      display: flex;
      flex-direction: column;
      justify-content: center;
-     border-right: 1px solid $--hospital-green;
-     border-left: 1px solid $--hospital-green;
+     border-right: 1px solid var(--hospital-green);
+     border-left: 1px solid var(--hospital-green);
      padding: 4px;
      margin: 0 8px;
     }

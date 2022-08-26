@@ -78,7 +78,9 @@
 }
 
 .no-result {
-  width: 98vw;
+  display: block;
+  width: 100%;
+  grid-column: 1 / -1;
   margin: 0 auto;
   font-size: $--lg;
   text-align: center;
